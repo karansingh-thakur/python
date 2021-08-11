@@ -1,0 +1,64 @@
+dic={1: "Harry",2:"Rohan"}
+act={1:"Log",2:"Retive"}
+act2={1:"Food",2:"Excerise"}
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+try:
+    for key,value in dic.items():
+        print("Press" ,key,"for",value, "\n", end="")
+    name=int(input("type here.."))
+    # if name>2:
+    #     print("error select 1 or 2")
+    for key,value in act.items():
+        print("Press",key, "for",value, "\n",end="")
+    to_do = int(input("type here.."))
+    for key,value in act2.items():
+        print("Press",key, "for",value, "\n",end="")
+    to_do2 = int(input("type here.."))
+
+    if name==1 and to_do==1 and to_do2==1:
+        value = input("type here\n")
+        with open("hf.txt", "a") as hfood:
+            hfood.write(str([str(getdate())]) + ": " + value + "\n")
+            print("successfully written")
+    #         condition no 2
+    elif name==1 and to_do==1 and to_do2==2:
+        value = input("type here\n")
+        with open("he.txt", "a") as hex:
+            hex.write(str([str(getdate())]) + ": " + value + "\n")
+            print("successfully written")
+    #         condition 3
+    elif name==2 and to_do==1 and to_do2==1:
+        value = input("type here\n")
+        with open("rf.txt", "a") as rfood:
+            rfood.write(str([str(getdate())]) + ": " + value + "\n")
+            print("successfully written")
+    #         condition 4
+    elif name==2 and to_do==1 and to_do2==2:
+        value = input("type here\n")
+        with open("re.txt", "a") as rex:
+            rex.write(str([str(getdate())]) + ": " + value + "\n")
+            print("successfully written")
+            # condition 5
+    elif name==1 and to_do==2 and to_do2==1:
+        with open("hf.txt", "r") as hfood:
+            a=hfood.read()
+            print(a)
+    elif name==1 and to_do==2 and to_do2==2:
+        with open("he.txt", "r") as hex:
+            a=hex.read()
+            print(a)
+    elif name==2 and to_do==2 and to_do2==1:
+        with open("rf.txt", "r") as rfood:
+            a=rfood.read()
+            print(a)
+    elif name==2 and to_do==2 and to_do2==2:
+        with open("re.txt", "r") as rex:
+            a=rex.read()
+            print(a)
+    else:
+        print("press valied number")
+
+except Exception as e:
+    print("something went wrong")
